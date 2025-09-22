@@ -1,0 +1,472 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--beige);
+    color: #333;
+    padding-top: 60px;
+    line-height: 1.6;
+}
+
+/* Image Loading Styles */
+img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+img.error {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+/* Loading animation for images */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+.image-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Main Colors */
+:root {
+    --dark-green: #2E6E34;
+    --light-green: #6FBF73;
+    --brown: #6A4E23;
+    --beige: #F5F1E3;
+    --white: #ffffff;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+nav .logo img:hover {
+    transform: scale(1.1);
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    color: var(--light-green);
+}
+
+nav .hamburger {
+    display: none;
+    color: var(--dark-green);
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-green);
+        text-align: center;
+    }
+
+    nav .nav-links.active {
+        display: block;
+    }
+
+    nav .nav-links a {
+        color: var(--white);
+        display: block;
+        padding: 15px;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 90vh;
+    margin-top: 0;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.35;
+    transition: opacity 0.3s ease;
+}
+
+.hero-image.loaded {
+    opacity: 0.35;
+}
+
+.hero-image:not(.loaded) {
+    opacity: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+#quote-container {
+    z-index: 1;
+    color: var(--white);
+    font-size: 2.5em;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+}
+
+/* Featured Content */
+.featured-content {
+    padding: 60px 20px;
+    background-color: var(--light-green);
+    text-align: center;
+    color: var(--white);
+}
+
+.featured-content h2 {
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--white);
+}
+
+.services h2 {
+    color: var(--dark-green);
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.service-cards .card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.service-cards .card:hover {
+    transform: translateY(-5px);
+}
+
+.service-cards img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 20px;
+    background-color: var(--beige);
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: var(--dark-green);
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    background: var(--white);
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    font-style: italic;
+}
+
+/* Blog Section */
+.blog {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.blog h2 {
+    color: var(--dark-green);
+    margin-bottom: 30px;
+}
+
+.blog-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.blog-cards .card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.blog-cards .card:hover {
+    transform: translateY(-5px);
+}
+
+.blog-cards img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blog-cards h3 {
+    padding: 15px;
+    font-size: 1.2em;
+    color: var(--dark-green);
+}
+
+.blog-cards a {
+    display: inline-block;
+    margin: 0 0 20px;
+    color: var(--light-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Call to Action */
+.cta {
+    padding: 80px 20px;
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta h2 {
+    margin-bottom: 15px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    background: var(--light-green);
+    color: var(--white);
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--white);
+    color: var(--dark-green);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+footer form {
+    margin-bottom: 15px;
+}
+
+footer input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 250px;
+    max-width: 80%;
+}
+
+footer button {
+    padding: 10px 15px;
+    border: none;
+    background: var(--light-green);
+    color: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+footer button:hover {
+    background: var(--white);
+    color: var(--dark-green);
+}
+
+/* Info Section (two boxes side-by-side on desktop, centered) */
+.info-section {
+    display: flex;
+    justify-content: center;   /* keep cards centered */
+    align-items: stretch;
+    gap: 40px;                 /* even spacing between cards */
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;           /* allows wrapping on smaller screens */
+}
+
+/* Base style for cards */
+.info-card {
+    flex: 1 1 45%;
+    max-width: 500px;          /* prevent them from being too wide */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    color: var(--white);
+    text-align: center;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Health Tip box - dark green (same as footer) */
+.info-card.tip {
+    background: var(--dark-green);
+}
+
+/* About box - brown */
+.info-card.about {
+    background: var(--brown);
+}
+
+/* Headings / text */
+.info-card h2 {
+    color: inherit;
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+.info-card p {
+    color: inherit;
+    font-size: 1em;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .service-cards,
+    .blog-cards {
+        grid-template-columns: 1fr;
+    }
+    .info-section {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .info-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 30px;
+        text-align: left;
+    }
+    footer input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    footer button {
+        width: 100%;
+    }
+}
+

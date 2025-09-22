@@ -1,0 +1,238 @@
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--beige);
+    color: #333;
+    padding-top: 60px;
+    line-height: 1.6;
+}
+
+/* Colors */
+:root {
+    --dark-green: #2E6E34;
+    --light-green: #6FBF73;
+    --brown: #6A4E23;
+    --white: #ffffff;
+    --beige: #F5F1E3;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    color: var(--light-green);
+}
+
+nav .hamburger {
+    display: none;
+    color: var(--dark-green);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    nav .nav-links.active {
+        display: flex;
+    }
+    
+    nav .hamburger {
+        display: block;
+    }
+}
+
+.page-header {
+    text-align: center;
+    padding: 80px 20px 36px;
+}
+
+.page-header h1 {
+    color: var(--dark-green);
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+}
+
+.page-header p {
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.breathing-section,
+.timer-section,
+.sound-section,
+.tracker-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#breathing-container {
+    margin: 40px auto 24px;
+    width: 220px;
+    height: 220px;
+    position: relative;
+}
+
+#circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.9), var(--light-green));
+    box-shadow: 0 12px 30px rgba(47,110,52,0.25);
+    transition: transform 4s ease-in-out, background 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle::before {
+    content: '';
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.6), transparent);
+    position: absolute;
+}
+
+#breathing-text {
+    font-size: 1.6rem;
+    color: var(--dark-green);
+    margin-top: 18px;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--brown);
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 24px 32px;
+    display: inline-block;
+    min-width: 220px;
+    margin: 20px 0;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.timer-controls button,
+#toggle-sound {
+    background: var(--light-green);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.timer-controls button:hover,
+#toggle-sound:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.sound-section {
+    background: rgba(111,191,115,0.12);
+}
+
+.tracker-section {
+    background: rgba(106,78,35,0.08);
+}
+
+#session-count {
+    font-size: 1.4rem;
+    color: var(--dark-green);
+    font-weight: 600;
+}
+
+footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 32px 20px;
+}
+
+@media (max-width: 540px) {
+    #breathing-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    .timer-display {
+        font-size: 2.4rem;
+        padding: 18px 24px;
+    }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Generator | GreenBite</title>
+  <link rel="stylesheet" href="workout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img">
+      <span>GreenBite</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="workout.html" class="active">Workout</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Header -->
+  <header class="page-header">
+    <h1>Workout Generator</h1>
+    <p>Choose your body part and equipment to get a personalized workout plan.</p>
+  </header>
+
+  <!-- Form -->
+  <section class="workout-form-section">
+    <form id="workout-form" class="workout-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="workout-type">Workout Type:</label>
+          <select id="workout-type">
+            <option value="strength">Strength Training</option>
+            <option value="cardio">Cardio</option>
+            <option value="hiit">HIIT</option>
+            <option value="yoga">Yoga</option>
+            <option value="pilates">Pilates</option>
+            <option value="stretching">Stretching</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="body-part">Body Focus:</label>
+          <select id="body-part">
+            <option value="full-body">Full Body</option>
+            <option value="upper-body">Upper Body</option>
+            <option value="lower-body">Lower Body</option>
+            <option value="core">Core</option>
+            <option value="arms">Arms</option>
+            <option value="legs">Legs</option>
+            <option value="chest">Chest</option>
+            <option value="back">Back</option>
+            <option value="shoulders">Shoulders</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="difficulty">Difficulty Level:</label>
+          <select id="difficulty">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="duration">Workout Duration:</label>
+          <select id="duration">
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="45">45 minutes</option>
+            <option value="60">60 minutes</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="equipment">Equipment Available:</label>
+          <select id="equipment">
+            <option value="none">No Equipment</option>
+            <option value="dumbbells">Dumbbells</option>
+            <option value="resistance-bands">Resistance Bands</option>
+            <option value="kettlebell">Kettlebell</option>
+            <option value="yoga-mat">Yoga Mat</option>
+            <option value="full-gym">Full Gym Access</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fitness-goal">Fitness Goal:</label>
+          <select id="fitness-goal">
+            <option value="weight-loss">Weight Loss</option>
+            <option value="muscle-gain">Muscle Gain</option>
+            <option value="endurance">Endurance</option>
+            <option value="flexibility">Flexibility</option>
+            <option value="general-fitness">General Fitness</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn generate-btn">Generate My Workout</button>
+    </form>
+  </section>
+
+  <!-- Workout Plan -->
+  <section id="workout-plan" class="workout-plan"></section>
+
+  <!-- Workout Timer -->
+  <section class="timer-section" id="timer-section" style="display: none;">
+    <h2>Exercise Timer</h2>
+    <div class="timer-container">
+      <div id="timer-display">00:30</div>
+      <div id="timer-info">
+        <p id="current-exercise">Get Ready!</p>
+        <p id="exercise-counter">Exercise 1 of 6</p>
+      </div>
+    </div>
+    <div class="timer-controls">
+      <button id="start-timer" class="btn">Start Workout</button>
+      <button id="pause-timer" class="btn" style="display: none;">Pause</button>
+      <button id="skip-exercise" class="btn" style="display: none;">Skip Exercise</button>
+      <button id="reset-timer" class="btn">Reset</button>
+    </div>
+    <div class="progress-bar">
+      <div id="progress" class="progress-fill"></div>
+    </div>
+  </section>
+
+  <!-- Workout History -->
+  <section class="history-section">
+    <h2>Workout History</h2>
+    <div id="workout-history">
+      <p>No workouts completed yet. Start your first workout!</p>
+    </div>
+    <button id="clear-history" class="btn btn-secondary">Clear History</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <form id="newsletter">
+      <input type="email" placeholder="Enter your email" id="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p>&copy; 2025 GreenBite Wellness</p>
+  </footer>
+
+  <script src="workout.js"></script>
+  <script>
+    function toggleMenu() {
+      const links = document.getElementById('navLinks');
+      const btn = document.querySelector('.hamburger');
+      links.classList.toggle('active');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    }
+  </script>
+</body>
+</html>

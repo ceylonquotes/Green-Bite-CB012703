@@ -1,0 +1,290 @@
+/* Theme */
+:root {
+    --dark-green: #2E6E34;
+    --light-green: #6FBF73;
+    --brown: #6A4E23;
+    --beige: #F5F1E3;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: var(--beige);
+    padding-top: 60px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+nav .logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--dark-green);
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.2s;
+}
+
+nav .nav-links a:hover,
+nav .nav-links a.active {
+    color: var(--light-green);
+}
+
+nav .hamburger {
+    display: none;
+    color: var(--dark-green);
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--dark-green);
+        text-align: center;
+    }
+
+    nav .nav-links.active {
+        display: block;
+    }
+
+    nav .nav-links a {
+        color: var(--white);
+        display: block;
+        padding: 15px;
+    }
+
+    nav .hamburger {
+        display: block;
+    }
+}
+.page-header {
+    text-align: center;
+    padding: 80px 20px 30px;
+}
+
+.page-header h1 {
+    color: var(--dark-green);
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.calculator-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.calculator-form {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    max-width: 460px;
+    width: 100%;
+    display: grid;
+    gap: 16px;
+}
+
+.calculator-form label {
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.calculator-form input,
+.calculator-form select {
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.calculator-form .btn {
+    background: var(--light-green);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.calculator-form .btn:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.results {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.results h2 {
+    color: var(--dark-green);
+    margin-bottom: 24px;
+}
+
+.result-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    max-width: 520px;
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+.progress-bar {
+    background: #e6edde;
+    border-radius: 999px;
+    overflow: hidden;
+    height: 12px;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: var(--light-green);
+    transition: width 0.6s ease-in-out;
+}
+
+.tips {
+    padding: 60px 20px 80px;
+    text-align: center;
+}
+
+.tips h2 {
+    color: var(--dark-green);
+    margin-bottom: 30px;
+}
+
+.tip-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tip-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.tip-card:hover {
+    transform: translateY(-6px);
+}
+
+footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 32px 20px;
+}
+
+footer form {
+    margin-bottom: 16px;
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer input[type="email"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    min-width: 260px;
+}
+
+footer button {
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: none;
+    background: var(--light-green);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+footer button:hover {
+    background: var(--white);
+    color: var(--dark-green);
+}
+
+@media (max-width: 600px) {
+    .calculator-form {
+        padding: 24px;
+    }
+}

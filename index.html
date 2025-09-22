@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GreenBite Wellness</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img"/>
+            <span>GreenBite</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="recipes.html">Healthy Recipes</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="workout.html">Workout</a></li>
+            <li><a href="mindfulness.html">Mindfulness</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div id="quote-container">
+            <p id="quote">Your health is your wealth!</p>
+        </div>
+        <img src="images/yoga bg pic 1.jpg" alt="Healthy Lifestyle" class="hero-image"/>
+    </header>
+
+    <!-- Info Section (two boxes, same row) -->
+    <section class="info-section">
+        <div class="info-card tip">
+            <h2>Health Tip of the Day</h2>
+            <p>Sleep 7–8 hours each night for optimal health.</p>
+        </div>
+        <div class="info-card about">
+            <h2>About GreenBite</h2>
+            <p>
+                At GreenBite Wellness, we believe in holistic health—nourishing your body, mind, and soul.
+                Our mission is to empower you with healthy recipes, mindful practices, and fitness tips that fit into your lifestyle.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>What We Offer</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="images/healthy recipe pic.png" alt="Healthy Recipes"/>
+                <h3>Healthy Recipes</h3>
+                <p>Discover delicious and nutritious meals tailored to your wellness goals.</p>
+            </div>
+            <div class="card">
+                <img src="images/workout plan pic.png" alt="Workout Plans"/>
+                <h3>Workout Plans</h3>
+                <p>Stay active with personalized workout routines for all fitness levels.</p>
+            </div>
+            <div class="card">
+                <img src="images/meditating pic 1.png" alt="Mindfulness"/>
+                <h3>Mindfulness</h3>
+                <p>Practice guided meditation and breathing techniques to reduce stress.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Community Says</h2>
+        <div class="testimonial">
+            <p>"GreenBite has completely transformed the way I view health. I feel more energized and balanced!"</p>
+            <span>- Sarah J.</span>
+        </div>
+        <div class="testimonial">
+            <p>"The recipes are easy to follow and delicious. My whole family enjoys them!"</p>
+            <span>- Mark T.</span>
+        </div>
+    </section>
+
+    <!-- Blog Highlights Section -->
+    <section class="blog">
+        <h2>Latest From Our Blog</h2>
+        <div class="blog-cards">
+            <div class="card">
+                <img src="images/blog1.jpg" alt="Nutrition Tips"/>
+                <h3>5 Superfoods You Need in Your Diet</h3>
+                <a href="blog1.html">Read More →</a>
+            </div>
+            <div class="card">
+                <img src="images/blog2.jpg" alt="Stress Relief"/>
+                <h3>Mindful Breathing: Reduce Stress in 5 Minutes</h3>
+                <a href="blog2.html">Read More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <h2>Start Your Wellness Journey Today!</h2>
+        <p>Join our community and take the first step towards a healthier, happier you.</p>
+        <a href="signup.html" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <form id="newsletter">
+            <input type="email" placeholder="Enter your email" id="email" required/>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p>&copy; 2025 GreenBite Wellness</p>
+    </footer>
+
+    <!-- External JS -->
+    <script src="index.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

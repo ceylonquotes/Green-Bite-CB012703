@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mindfulness | GreenBite</title>
+  <link rel="stylesheet" href="mindfulness.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img"/>
+      <span>GreenBite</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="workout.html">Workout</a></li>
+      <li><a href="mindfulness.html" class="active">Mindfulness</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Mindfulness</h1>
+    <p>Take a moment to breathe, relax, and reconnect with yourself.</p>
+  </header>
+
+  <!-- Breathing Animation -->
+  <section class="breathing-section">
+    <h2>Guided Breathing</h2>
+    <div id="breathing-container">
+      <div id="circle"></div>
+      <p id="breathing-text">Breathe In</p>
+    </div>
+  </section>
+
+  <!-- Meditation Timer -->
+  <section class="timer-section">
+    <h2>Meditation Timer</h2>
+    <div class="timer-display" id="timer-display">05:00</div>
+    <div class="timer-controls">
+      <button onclick="startTimer(5)">Start 5 min</button>
+      <button onclick="startTimer(10)">Start 10 min</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </section>
+
+  <!-- Ambient Sounds -->
+  <section class="sound-section">
+    <h2>Ambient Sound</h2>
+    <button id="toggle-sound">Play Ambient Sound</button>
+    <audio id="ambient-sound" src="AmbientSound.mp3" loop preload="metadata"></audio>
+  </section>
+
+  <!-- Session Tracker -->
+  <section class="tracker-section">
+    <h2>Completed Sessions</h2>
+    <p id="session-count">0 sessions completed</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GreenBite Wellness</p>
+  </footer>
+
+  <script src="mindfulness.js"></script>
+</body>
+</html>

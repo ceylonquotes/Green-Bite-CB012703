@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie & Nutrition Calculator | GreenBite</title>
+  <link rel="stylesheet" href="calculator.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img">
+      <span>GreenBite</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html" class="active">Calculator</a></li>
+      <li><a href="workout.html">Workout</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Calorie & Nutrition Calculator</h1>
+    <p>Find your daily calorie needs and personalized macro breakdown.</p>
+  </header>
+
+  <!-- Calculator Form -->
+  <section class="calculator-section">
+    <form id="calculator-form" class="calculator-form">
+      <label for="age">Age (years):</label>
+      <input type="number" id="age" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+
+      <label for="height">Height (cm):</label>
+      <input type="number" id="height" required>
+
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" required>
+
+      <label for="activity">Activity Level:</label>
+      <select id="activity" required>
+        <option value="1.2">Sedentary</option>
+        <option value="1.375">Lightly Active</option>
+        <option value="1.55">Moderately Active</option>
+        <option value="1.725">Very Active</option>
+        <option value="1.9">Super Active</option>
+      </select>
+
+      <button type="submit" class="btn">Calculate</button>
+    </form>
+  </section>
+
+  <!-- Results Section -->
+  <section id="results" class="results">
+    <h2>Your Results</h2>
+    <div class="result-card">
+      <p id="bmr">BMR: </p>
+      <p id="tdee">TDEE: </p>
+      <p id="macros">Macros: </p>
+    </div>
+  </section>
+
+  <!-- Nutrition Tips -->
+  <section class="tips">
+    <h2>Nutrition Tips</h2>
+    <div class="tip-cards">
+      <div class="tip-card">
+        <h3>Balanced Diet</h3>
+        <p>Include a mix of protein, carbs, and healthy fats in every meal.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Hydration</h3>
+        <p>Drink at least 8 glasses of water daily for optimal health.</p>
+      </div>
+      <div class="tip-card">
+        <h3>Meal Prep</h3>
+        <p>Plan and prep meals ahead to stay consistent with your goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <form id="newsletter">
+      <input type="email" placeholder="Enter your email" id="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p>&copy; 2025 GreenBite Wellness</p>
+  </footer>
+
+  <script src="calculator.js"></script>
+  <script>
+    // Mobile Nav
+    function toggleMenu() {
+      const links = document.getElementById('navLinks');
+      const btn = document.querySelector('.hamburger');
+      links.classList.toggle('active');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Healthy Recipes</title>
+  <link rel="stylesheet" href="recipes.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img"/>
+      <span>GreenBite</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html" class="active">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="workout.html">Workout</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false" onclick="toggleMenu()">☰</button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Healthy Recipes</h1>
+    <p>Discover delicious, easy-to-make meals that support your wellness journey.</p>
+  </header>
+
+  <!-- Search and Filter -->
+  <section class="search-filter">
+    <input type="text" id="search" placeholder="Search for recipes..." oninput="filterRecipes()">
+    <select id="categoryFilter" onchange="filterRecipes()">
+      <option value="all">All Categories</option>
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snack">Snack</option>
+    </select>
+  </section>
+
+  <!-- Recipe List -->
+  <section id="recipe-list" class="recipe-list"></section>
+
+  <!-- Modal -->
+  <div id="recipe-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <img id="modal-image" src="" alt="Recipe Image">
+      
+      <h3>Ingredients</h3>
+      <ul id="modal-ingredients"></ul>
+      
+      <h3>Steps</h3>
+      <ol id="modal-steps"></ol>
+      
+      <h3>Nutrition Info</h3>
+      <table id="modal-nutrition"></table>
+    </div>
+  </div>
+
+  <script src="recipes.js"></script>
+  <script>
+    // Mobile nav toggle (same as homepage)
+    function toggleMenu() {
+      const links = document.getElementById('navLinks');
+      const btn = document.querySelector('.hamburger');
+      links.classList.toggle('active');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+    }
+  </script>
+</body>
+</html>

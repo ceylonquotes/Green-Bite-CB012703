@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Feedback</title>
+  <link rel="stylesheet" href="contact.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <img src="images/GREENBITE LOGO ICON.png" alt="GreenBite Logo" class="logo-img"/>
+      <span>GreenBite</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="workout.html">Workout</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">&#9776;</button>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Contact & Feedback</h1>
+    <p>We'd love to hear from you! Share your thoughts, suggestions, or questions below.</p>
+  </header>
+
+  <!-- Contact Form -->
+  <section class="contact-section" data-animate>
+    <form id="contact-form" novalidate>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Enter your name" autocomplete="name">
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email" autocomplete="email">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+
+      <button type="submit">Send Feedback</button>
+    </form>
+    <div id="confirmation" aria-live="polite"></div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section" data-animate>
+    <h2>Our Location</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.125955075444!2d-122.41941568468117!3d37.77492977975967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c8c8d8f0b%3A0x4c9e8f3f03c4e54!2sGreenBite%20HQ!5e0!3m2!1sen!2sus!4v0000000000000" 
+      width="100%" height="400" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" data-animate>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">What is GreenBite?</button>
+      <div class="faq-answer" hidden>GreenBite is a wellness brand promoting healthy living through recipes, workouts, and mindfulness.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">How can I join the community?</button>
+      <div class="faq-answer" hidden>You can sign up on our homepage and access exclusive content and newsletters.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">Is GreenBite free?</button>
+      <div class="faq-answer" hidden>Yes, GreenBite provides free resources, with optional premium plans for advanced content.</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>
